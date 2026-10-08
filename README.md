@@ -9,8 +9,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
- 
-
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ body {
+   font-family: 'Inter', sans-serif;
+   background: transparent;
+   color: #e0e6f0;
+ }
 
  /* === Profile Table (как на странице пользователя) === */
  .profile-table-wrapper {
