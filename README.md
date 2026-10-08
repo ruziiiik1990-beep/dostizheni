@@ -259,8 +259,11 @@
 <div class="profile-table-wrapper">
   <div class="profile">
     <div class="profile-body" style="padding: 20px 24px;">
-            <div class="profile-section" style="border-top: none;">
-
+      <div class="profile-section" style="border-top: none;">
+        <h3 class="profile-section-name">
+          <span class="material-symbols-outlined">military_tech</span>
+          Достижения
+        </h3>
         <div class="profile-section-content">
           <div class="ach-grid" id="achGrid">
             <div class="ach-loading" id="achLoading">Загрузка...</div>
