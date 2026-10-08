@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -435,14 +435,26 @@ document.addEventListener('click', function(e) {
 
 <script>
 function sendHeight() {
-  var h = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+  var h = Math.max(
+    document.body.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.scrollHeight,
+    document.documentElement.offsetHeight
+  );
   window.parent.postMessage({ type: 'resize', frame: 'achievements', height: h }, '*');
 }
 window.addEventListener('load', sendHeight);
 setTimeout(sendHeight, 500);
 setTimeout(sendHeight, 1500);
 setTimeout(sendHeight, 3000);
-if (window.ResizeObserver) { new ResizeObserver(sendHeight).observe(document.body); }
+if (window.ResizeObserver) {
+  new ResizeObserver(sendHeight).observe(document.body);
+}
+// Also send height whenever new items are added to the grid
+var grid = document.getElementById('achGrid');
+if (grid && window.MutationObserver) {
+  new MutationObserver(sendHeight).observe(grid, { childList: true, subtree: true });
+}
 </script>
 
 </body>
